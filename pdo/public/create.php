@@ -16,11 +16,11 @@ if (isset($_POST['submit'])) {
     $connection = new PDO($dsn, $username, $password, $options);
     
     $new_user = array(
-      "firstname" => $_POST['firstname'],
-      "lastname"  => $_POST['lastname'],
-      "userid"     => $_POST['userid'],
-      "house"       => $_POST['house'],
-      "location"  => $_POST['location']
+     "FirstName" => $_POST['FirstName'],
+      "LastName"  => $_POST['LastName'],
+      "UserID"     => $_POST['UserID'],
+      "HouseID"       => $_POST['HouseID'],
+      "LocationID"  => $_POST['LocationID']
     );
 
     $sql = sprintf(
@@ -40,23 +40,23 @@ if (isset($_POST['submit'])) {
 <?php require "templates/header.php"; ?>
 
   <?php if (isset($_POST['submit']) && $statement) : ?>
-    <blockquote><?php echo escape($_POST['firstname']); ?> successfully added.</blockquote>
+    <blockquote><?php echo escape($_POST"FirstName"]); ?> successfully added.</blockquote>
   <?php endif; ?>
 
   <h2>Add a user</h2>
 
   <form method="post">
     <input name="csrf" type="hidden" value="<?php echo escape($_SESSION['csrf']); ?>">
-    <label for="firstname">First Name</label>
-    <input type="text" name="firstname" id="firstname">
-    <label for="lastname">Last Name</label>
-    <input type="text" name="lastname" id="lastname">
-    <label for="userid">User ID</label>
-    <input type="text" name="userid" id="userid">
-    <label for="house">House</label>
-    <input type="text" name="house" id="house">
-    <label for="location">Location</label>
-    <input type="text" name="location" id="location">
+    <label for="FirstName">First Name</label>
+    <input type="text" name="FirstName" id="FirstName">
+    <label for="LastName">Last Name</label>
+    <input type="text" name="LastName" id="LastName">
+    <label for="UserID">User ID</label>
+    <input type="text" name="UserID" id="UserID">
+    <label for="HouseID">HouseID</label>
+    <input type="text" name="HouseID" id="HouseID">
+    <label for="LocationID">LocationID</label>
+    <input type="text" name="LocationID" id="LocationID">
     <input type="submit" name="submit" value="Submit">
   </form>
 
