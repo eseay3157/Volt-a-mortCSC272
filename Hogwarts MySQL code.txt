@@ -1,0 +1,136 @@
+-- CREATE DATABASE HogwartsDB;
+
+USE TEAM_VAM;
+
+DROP TABLE IF EXISTS Hogwarts, Location, House, Administrator, Student, Activities;
+
+create table Hogwarts (
+	Name VARCHAR(50),
+	LocationID VARCHAR(50),
+	HouseID VARCHAR(50),
+	AdminID VARCHAR(50),
+	StudentID VARCHAR(50),
+	ActivityID VARCHAR(50)
+);
+
+DESCRIBE Hogwarts;
+
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Harry Potter', 'L113', 'H01', 'N/A', 'S5401', 'EC2101');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Hermione Granger', 'L104', 'H01', 'N/A', 'S5402', 'EC2107');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Draco Malfoy', 'L109', 'H03', 'N/A', 'S5403', 'EC2106');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Cedric Diggery', 'L103', 'H02', 'N/A', 'S5404', 'EC2105');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Ronald Weasley', 'L106', 'H01', 'N/A', 'S5405', 'EC2102');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Luna Lovegood', 'L116', 'H04', 'N/A', 'S5406', 'EC2103');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Rubeus Hagrid', 'L115', 'N/A', 'AD201', 'N/A', 'N/A');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Albus Dumbledore', 'L118', 'N/A', 'AD202', 'N/A', 'N/A');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Dobby HouseElf', 'L110', 'N/A', 'AD203', 'N/A', 'N/A');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Dolores Umbridge', 'L114', 'N/A', 'AD204', 'N/A', 'N/A');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Bellatrix Lestrange', 'L101', 'N/A', 'AD205', 'N/A', 'N/A');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Severus Snape', 'L105', 'N/A', 'AD206', 'N/A', 'N/A');
+insert into Hogwarts (Name, LocationID, HouseID, AdminID, StudentID, ActivityID) values ('Lord Voldemort', 'L120', 'N/A', 'AD207', 'N/A', 'N/A');
+
+SELECT * FROM Hogwarts;
+
+create table Location (
+	LocationID VARCHAR(50),
+	LocationName VARCHAR(50)
+);
+
+DESCRIBE Location;
+
+insert into Location (LocationID, LocationName) values ('L101', 'Astronomy Tower');
+insert into Location (LocationID, LocationName) values ('L102', 'History of Magic Classroom');
+insert into Location (LocationID, LocationName) values ('L103', 'Trasfiguration Classroom');
+insert into Location (LocationID, LocationName) values ('L104', 'Potions Classroom');
+insert into Location (LocationID, LocationName) values ('L105', 'Defense Against the Dark Arts Classroom');
+insert into Location (LocationID, LocationName) values ('L106', 'Gryffindor');
+insert into Location (LocationID, LocationName) values ('L107', 'Ravenclaw');
+insert into Location (LocationID, LocationName) values ('L108', 'Hufflepuff');
+insert into Location (LocationID, LocationName) values ('L109', 'Slytherine');
+insert into Location (LocationID, LocationName) values ('L110', 'Greenhouse 1');
+insert into Location (LocationID, LocationName) values ('L111', 'Greenhouse 2');
+insert into Location (LocationID, LocationName) values ('L112', 'Greenhouse 3');
+insert into Location (LocationID, LocationName) values ('L113', 'Greenhouse 4');
+insert into Location (LocationID, LocationName) values ('L114', 'Room of Requirements');
+insert into Location (LocationID, LocationName) values ('L115', 'Hagrids Hut');
+insert into Location (LocationID, LocationName) values ('L116', 'Forbidden Forest');
+insert into Location (LocationID, LocationName) values ('L117', 'Owlery');
+insert into Location (LocationID, LocationName) values ('L118', 'Great Hall');
+insert into Location (LocationID, LocationName) values ('L119', 'Quidditch Pitch');
+insert into Location (LocationID, LocationName) values ('L120', 'Chamber of Secrets');
+
+SELECT * FROM Location;
+
+create table House (
+	HouseID VARCHAR(50),
+	HouseName VARCHAR(50),
+	LocationID VARCHAR(50)
+);
+
+DESCRIBE House;
+
+insert into House (HouseID, HouseName, LocationID) values ('H01', 'House Gryffindor', 'L106');
+insert into House (HouseID, HouseName, LocationID) values ('H02', 'House Hufflepuff', 'L108');
+insert into House (HouseID, HouseName, LocationID) values ('H03', 'House Slytherin', 'L109');
+insert into House (HouseID, HouseName, LocationID) values ('H04', 'House Ravenclaw', 'L107');
+
+SELECT * FROM House;
+
+create table Administrator (
+	AdminID VARCHAR(50),
+	Name VARCHAR(50),
+	Department VARCHAR(50),
+	LocationID VARCHAR(50)
+);
+
+DESCRIBE Administrator;
+
+insert into Administrator (AdminID, Name, Department, LocationID) values ('AD201', 'Rubeus Hagrid', 'Groundskeeping', 'L115');
+insert into Administrator (AdminID, Name, Department, LocationID) values ('AD202', 'Albus Dumbledore', 'Headmaster', 'L118');
+insert into Administrator (AdminID, Name, Department, LocationID) values ('AD203', 'Dobby HouseElf', 'Maintenence', 'L110');
+insert into Administrator (AdminID, Name, Department, LocationID) values ('AD204', 'Dolores Umbridge', 'Ministry of Magic', 'L114');
+insert into Administrator (AdminID, Name, Department, LocationID) values ('AD205', 'Bellatrix Lestrange', 'Security', 'L101');
+insert into Administrator (AdminID, Name, Department, LocationID) values ('AD206', 'Severus Snape', 'Professor', 'L105');
+insert into Administrator (AdminID, Name, Department, LocationID) values ('AD207', 'Lord Voldemort', 'Death Eater', 'L120');
+
+SELECT * FROM Administrator;
+
+create table Student (
+	StudentID VARCHAR(50),
+	Name VARCHAR(50),
+	HouseID VARCHAR(50),
+	ActivityID VARCHAR(50),
+	LocationID VARCHAR(50)
+);
+
+DESCRIBE Student;
+
+insert into Student (StudentID, Name, HouseID, ActivityID, LocationID) values ('S5401', 'Harry Potter', 'H01', 'EC2101', 'L113');
+insert into Student (StudentID, Name, HouseID, ActivityID, LocationID) values ('S5402', 'Hermione Granger', 'H01', 'EC2107', 'L104');
+insert into Student (StudentID, Name, HouseID, ActivityID, LocationID) values ('S5403', 'Draco Malfoy', 'H03', 'EC2106', 'L109');
+insert into Student (StudentID, Name, HouseID, ActivityID, LocationID) values ('S5404', 'Cedric Diggery', 'H02', 'EC2105', 'L103');
+insert into Student (StudentID, Name, HouseID, ActivityID, LocationID) values ('S5405', 'Ronald Weasley', 'H01', 'EC2102', 'L106');
+insert into Student (StudentID, Name, HouseID, ActivityID, LocationID) values ('S5406', 'Luna Lovegood', 'H04', 'EC2103', 'L116');
+
+SELECT * FROM Student;
+
+create table Activities (	
+	ActivityID VARCHAR(50),
+	ActivityName VARCHAR(50),
+	ActivityDay VARCHAR(50),
+	ActivityTime VARCHAR(50),
+	LocationID VARCHAR(50)
+);
+
+DESCRIBE Activities;
+
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2101', 'Quidditch', 'Saturday', '8am', 'L119');
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2102', 'Gobstones League', 'Friday', '6pm', 'L118');
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2103', 'Charms Club', 'Thursday', '7pm', 'L104');
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2104', 'Dueling Club', 'Wednesday', '6pm', 'L120');
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2105', 'Prefects', 'Tuesday',  '5pm', 'L105');
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2106', 'Inquisitorial Squad', 'Sunday', '12pm', 'L116');
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2107', 'Dumbledores Army', 'Monday', '9am', 'L101');
+insert into Activities (ActivityID, ActivityName, ActivityDay, ActivityTime, LocationID) values ('EC2108', 'S.P.E.W.', 'Saturday', '5pm', 'L113');
+
+SELECT * FROM Activities;
