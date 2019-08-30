@@ -14,11 +14,11 @@ if (isset($_POST['submit'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $new_user = array(
-      "UserID"  => $_POST ['UserID'],
-     "FirstName" => $_POST['FirstName'],
-      "LastName" => $_POST['LastName'],
+      "UserID"    => $_POST ['UserID'],
+     "FirstName"  => $_POST['FirstName'],
+      "LastName"  => $_POST['LastName'],
       "HouseID"  => $_POST['HouseID'],
-      "ActivityID"  => $_POST['ActivityID']
+      "ActivityID"  => $_POST['ActivityID'],
       "LocationID" => $_POST['LocationID']
     );
 
