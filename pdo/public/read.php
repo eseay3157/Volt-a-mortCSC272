@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT * 
-            FROM Location
+            FROM Hogwarts
             WHERE LocationID = :LocationID"; 
 
     $Location = $_POST['LocationID'];
@@ -40,14 +40,14 @@ if (isset($_POST['submit'])) {
     <table>
       <thead>
         <tr>
-          <th>#</th>
+          
           <th>UserID</th>
           <th>FirstName</th>
           <th>LastName</th>
           <th>HouseID</th>
           <th>ActivityID</th>
           <th>LocationID</th>
-          <th>Date</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
           <td><?php echo escape($row["HouseID"]); ?></td>
           <td><?php echo escape($row["ActivityID"]); ?></td>
           <td><?php echo escape($row["LocationID"]); ?></td>
-          <td><?php echo escape($row["Date"]); ?> </td>
+          
         </tr>
       <?php endforeach; ?>
       </tbody>
